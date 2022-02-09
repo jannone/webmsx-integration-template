@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="./wmsx/wmsx.js"></script>
+    <script src="./dsktool.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+      WMSX.ALLOW_URL_PARAMETERS = false
+      WMSX.FAST_BOOT = true
+      WMSX.SCREEN_DEFAULT_SCALE = viewportWidth >= 1000 ? 1.05 : (viewportWidth / 640)
+    </script>
+    <style>
+      /* wmsx code uses this ID as the container for the emulator */
+      #wmsx-screen {
+        width: 650px;
+        height: 512px;
+      }
+      #btn-run {
+        display: block;
+        width: 651px;
+        height: 3em;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wmsx-screen"></div>
+    <button id="btn-run" onclick="emulatorRun()">Run with Hello World file</button>
+  </body>
+</html>
